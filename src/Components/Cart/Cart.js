@@ -29,6 +29,7 @@ const Cart = (props) => {
                     <p>Exercise time : {total}m</p>
                     <p>Break time :</p>
                 </div>
+                <button>Activity completed</button>
         </div>
     );
 };
