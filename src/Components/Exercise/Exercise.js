@@ -11,7 +11,7 @@ const Exercise = (props) => {
           <img src={img} alt="" />
             <p className='exercise-name'>{name}</p>
             <p>{title}</p>
-            {/* <p>Age:{age}</p> */}
+            
             <p>Time required :{time}</p>
           </div>
           <button onClick={()=>handleAddToCart(exercise)}  className='btn-cart'>
