@@ -4,7 +4,7 @@ import './Exercise.css'
 const Exercise = (props) => {
     // console.log(props)
     const {exercise, handleAddToCart} = props
-    const {img,title,time,name,} = exercise;
+    const {img,title,time,name} = exercise;
     return (
         <div className='exercise'>
           <div className='exercise-info'>
