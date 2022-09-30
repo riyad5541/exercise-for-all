@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
 }
-.btn-cart 
+
 .btn-cart:hover{
     background-color: blue;
 }
