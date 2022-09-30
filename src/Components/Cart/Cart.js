@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css'
+import Swal from 'sweetalert2'
 
 const Cart = (props) => {
     const {cart} = props;
-    console.log(cart)
+    // console.log(cart)
+    const [time, setTime] = useState(0)
     let total = 0;
     for(const exercise of cart){
         total = total + exercise.time;
         // console.log(total)
+    }
+    const handleAddToBreak = (breakTime) => {
+        localStorage.setItem('breakTime',JSON.stringify(breakTime))
+        setTime(breakTime)
+    }
+    const handleActivity = () =>{
+        Swal.fire(
+            'Good job!',
+            'Activity Completed Succesfully!',
+            'success'
+        )
     }
     return (
         <div className='all-cart'>
@@ -18,18 +31,18 @@ const Cart = (props) => {
                 <h1>Add A Break</h1>
 
                 <div className='btn-set'>
-                    <button>2</button>
-                    <button>5</button>
-                    <button>8</button>
-                    <button>10</button>
-                    <button>12</button>
+                    <button onClick={() => handleAddToBreak(2)}>2</button>
+                    <button onClick={() => handleAddToBreak(5)}>5</button>
+                    <button onClick={() => handleAddToBreak(8)}>8</button>
+                    <button onClick={() => handleAddToBreak(10)}>10</button>
+                    <button onClick={() => handleAddToBreak(12)}>12</button>
                 </div>
                 <h1>Exercise Details</h1>
                 <div>
                     <p>Exercise time : {total}m</p>
-                    <p>Break time :</p>
+                    <p>Break time: {time}</p>
                 </div>
-                <button>Activity completed</button>
+                <button onClick={handleActivity} className='activity-btn'>Activity completed</button>
         </div>
     );
 };
