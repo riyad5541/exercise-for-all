@@ -12,7 +12,7 @@ const Gymnasium = () => {
         .then(data =>setExercises(data))
     }, []);
     const handleAddToCart  = (exercise) =>{
-        console.log(exercise)
+
         const newCart =[...cart,exercise];
         setCart(newCart);
     }
